@@ -1,0 +1,26 @@
+<% layout('layout/boilerplate') %>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card" style="width: 18rem;">
+            <img src="<%= cp.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= cp.title %></h5>
+              <p class="card-text"><%= cp.description %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-muted"> <%= cp.location %> </li>
+              <li class="list-group-item"> <%= cp.price%> </li>
+            </ul>
+            <div class="card-body">
+                <form action="/campgrounds/<%= cp._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-warning"> Delete </button>
+                </form>
+            </div>
+          </div>
+    </div>
+</div>
+
+    <footer>
+        <a href="/campgrounds"> All Campgrounds</a>
+    </footer>
